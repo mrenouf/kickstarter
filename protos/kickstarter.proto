@@ -1,0 +1,72 @@
+syntax = "proto2";
+
+
+message ProjectList {
+	repeated Project projects = 1;
+	optional uint32 total_hits = 2;
+}
+message Project {
+	optional int64 id = 1;
+	optional string name = 2;
+	optional string blurb = 3;
+	optional float goal = 4;
+	optional float pledged = 5;
+	optional string state = 6;
+	optional string slug = 7;
+	optional bool disable_communication = 8;
+	optional string country = 9;
+	optional string currency_symbol = 10;
+	optional bool currency_trailing_code = 11;
+	optional uint32 deadline = 12;
+	optional uint32 state_changed_at = 13;
+	optional uint32 created_at = 14;
+	optional uint32 launched_at = 15;
+	optional float backers_count = 16;
+	optional Photo photo = 17;
+	optional User creator = 18;
+	optional Location location = 19;
+	optional Urls urls = 20;
+}
+message Photo {
+	optional string full = 1;
+	optional string ed = 2;
+	optional string med = 3;
+	optional string little = 4;
+	optional string small = 5;
+	optional string thumb = 6;
+}
+message User {
+	optional uint32 id = 1;
+	optional string name = 2;
+	optional Photo avatar = 3;
+	optional Urls urls = 4;
+	optional Location location = 5;	
+}
+message Urls {
+	optional Link web = 1;
+	optional Link api = 2;
+}
+message Link {
+	optional string user = 1;
+	optional string discover = 2;
+	optional string location = 3;
+	optional string project = 4;
+	optional string nearby_projects = 5;
+}
+message Location {
+	optional uint32 id = 1;
+	optional string name = 2;
+	optional string slug = 3;
+	optional string short_name = 4;
+	optional string displayable_name = 5;
+	optional string country = 6;
+	optional string state = 7;
+	optional Urls urls = 8;
+}
+message Category {
+	optional uint32 id = 1;
+	optional string name = 2;
+	optional string slug = 3;
+	optional uint32 position = 4;
+	optional uint32 parent_id = 5;
+}
